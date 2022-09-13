@@ -17,7 +17,7 @@ pipeline {
               steps {
                   withAWS(region:'us-east-1',credentials:'airflowcred') {
                   sh 'echo "Upload to S3 bucket"'
-                      s3Upload(pathStyleAccessEnabled: true, payloadSigningEnabled: true, file:'dags/',bucket:'airflowtest-dag')
+                      //s3Upload(pathStyleAccessEnabled: true, payloadSigningEnabled: true, file:'dags/',bucket:'airflowtest-dag')
 			  sh 'aws s3 ls'
                   }
               }
