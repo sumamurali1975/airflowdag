@@ -18,8 +18,8 @@ pipeline {
                   withAWS(region:'us-east-1',credentials:'airflowcred') {
                   sh 'echo "Upload to S3 bucket"'
 			  sh ''' echo "$s3sourcefile"
-			  	echo "s3bucketname"
-				echo "s3buckettarget"
+			  	echo "$s3bucketname"
+				echo "$s3buckettarget"
 				'''
                       s3Upload(pathStyleAccessEnabled: true, payloadSigningEnabled: true, file:'dags',bucket:'airflowtest-dag', path:'dags/')
 			
